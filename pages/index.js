@@ -42,23 +42,23 @@ export default function Home() {
           <span className={styles.tape}>Activities</span>
         </div>
         <div className={styles.section_body}>
-          <p>
-            <a href="https://tatsuroro.hateblo.jp/">Blog</a>
-          </p>
-          <p>
-            <a href="https://github.com/tatsuroro">GitHub</a>
-          </p>
-          <p>
-            <a href="https://twitter.com/tatsuroro">Twitter</a>
-          </p>
-          <p>
-            <a href="https://www.facebook.com/tatsuro.nk">Facebook</a>
-          </p>
+          <div className={styles.activities_link}>
+            <p>
+              <a href="https://tatsuroro.hateblo.jp/">Blog</a>
+            </p>
+            <p>
+              <a href="https://github.com/tatsuroro">GitHub</a>
+            </p>
+            <p>
+              <a href="https://twitter.com/tatsuroro">Twitter</a>
+            </p>
+            <p>
+              <a href="https://www.facebook.com/tatsuro.nk">Facebook</a>
+            </p>
+          </div>
         </div>
       </section>
-      <footer>
-        &copy; tatsuroro.com
-      </footer>
+      <footer>&copy; tatsuroro.com</footer>
     </div>
   );
 }
