@@ -27,7 +27,7 @@ export default function Home() {
           </ul>
           <h3>Experience</h3>
           <ul>
-            <li>Ubie, Inc. (2020-)</li>
+            <li>Ubie, Inc. / Ubie Discovery (2020-)</li>
             <li>LINE Growth Technology Corporation (2019-2020)</li>
             <li>Kaizen Platform, Inc. (2015-2019)</li>
             <li>CyberAgent, Inc. (2012-2015)</li>
