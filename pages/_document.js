@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <title>Undefined - tatsuroro | Tatsuro Nakamura</title>
+        <title>tatsuroro | Tatsuro Nakamura</title>
         <link rel='icon' href='/favicon.ico' />
         <link
           href='https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap'

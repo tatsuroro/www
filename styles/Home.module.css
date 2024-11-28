@@ -30,7 +30,7 @@
   font-size: 1rem;
 }
 
-.section_title { 
+.section_title {
 }
 
 .section_body {
@@ -43,7 +43,7 @@
 .tape {
   position: relative;
   display: inline-flex;
-  padding: 4px 24px 4px 24px;
+  padding: 4px 40px 4px 24px;
   background-color: #000000;
   color: #ffffff;
   letter-spacing: 2px;
@@ -57,15 +57,15 @@
   background-color: #126a92;
 }
 .tape:after {
-  content: "";
-  position:absolute;
-  top:0;
-  right:0;
-  width:0;
-  height:0;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
   border-style: solid;
   border-color: transparent #fff transparent transparent;
-  border-width: 0 18px 40px 0;
+  border-width: 0 24px 40px 0;
 }
 
 .code {

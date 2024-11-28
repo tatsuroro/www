@@ -1,12 +1,9 @@
-import styles from "../styles/Home.module.css";
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          <span className={styles.title_packing}>U</span>ndefined
-        </h1>
         <p className={styles.description}>tatsuroro | Tatsuro Nakamura</p>
       </main>
 
@@ -27,7 +24,7 @@ export default function Home() {
           </ul>
           <h3>Experience</h3>
           <ul>
-            <li>Ubie, Inc. / Ubie Discovery (2020-)</li>
+            <li>Ubie, Inc. (2020-)</li>
             <li>LINE Growth Technology Corporation (2019-2020)</li>
             <li>Kaizen Platform, Inc. (2015-2019)</li>
             <li>CyberAgent, Inc. (2012-2015)</li>
@@ -44,16 +41,16 @@ export default function Home() {
         <div className={styles.section_body}>
           <div className={styles.activities_link}>
             <p>
-              <a href="https://tatsuroro.hateblo.jp/">Blog</a>
+              <a href='https://tatsuroro.hateblo.jp/'>Blog</a>
             </p>
             <p>
-              <a href="https://github.com/tatsuroro">GitHub</a>
+              <a href='https://github.com/tatsuroro'>GitHub</a>
             </p>
             <p>
-              <a href="https://twitter.com/tatsuroro">Twitter</a>
+              <a href='https://twitter.com/tatsuroro'>Twitter</a>
             </p>
             <p>
-              <a href="https://www.facebook.com/tatsuro.nk">Facebook</a>
+              <a href='https://www.facebook.com/tatsuro.nk'>Facebook</a>
             </p>
           </div>
         </div>
