@@ -1,0 +1,22 @@
+:root {
+  --font-body: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+  --font-mono: 'SF Mono', Menlo, Consolas, monospace;
+  --max-width: 42rem;
+
+  --color-bg: #f8fbfc;
+  --color-text: #3a4552;
+  --color-text-strong: #22303c;
+  --color-text-muted: #8b96a3;
+  --color-accent: #3e8ca6;
+  --color-accent-wash: #a8deec;
+  --aura-opacity: 0.35;
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #0c1219;
+  --color-text: #cfd6df;
+  --color-text-strong: #eef2f6;
+  --color-text-muted: #77808f;
+  --color-accent: #a8deec;
+  --aura-opacity: 0.13;
+}

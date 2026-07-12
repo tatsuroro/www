@@ -1,0 +1,91 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const nav = [
+  { href: '/blog', label: 'blog' },
+  { href: '/resume', label: 'resume' },
+  { href: '/tags', label: 'tags' },
+  { href: '/rss.xml', label: 'rss' },
+];
+const current = Astro.url.pathname;
+---
+
+<header>
+  <div class="masthead">
+    <a class="site-name" href="/">tatsuroro</a>
+    <ThemeToggle />
+  </div>
+  <p class="tagline">software developer / fukuoka, jp</p>
+  <nav>
+    {
+      nav.map(({ href, label }) => (
+        <a href={href} class:list={{ active: current.startsWith(href) }}>
+          {label}
+        </a>
+      ))
+    }
+  </nav>
+  <div class="rule" aria-hidden="true"></div>
+</header>
+
+<style>
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .site-name {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--color-text-strong);
+  }
+
+  .site-name:hover {
+    text-decoration: none;
+  }
+
+  .site-name::after {
+    content: '▍';
+    color: var(--color-accent);
+    margin-left: 2px;
+  }
+
+  .tagline {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-top: 0.1rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.1rem;
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  nav a {
+    color: var(--color-text-muted);
+  }
+
+  nav a.active,
+  nav a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .rule {
+    height: 1px;
+    margin: 0.9rem 0 2rem;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-accent-wash) 55%, transparent),
+      color-mix(in srgb, var(--color-accent-wash) 12%, transparent) 45%,
+      transparent 85%
+    );
+  }
+</style>
