@@ -1,5 +1,6 @@
 // Movable Type エクスポート形式のパーサー。
 // エントリは `--------` 行、エントリ内のセクションは `-----` 行で区切られる。
+import path from 'node:path';
 
 export function parseMtExport(text) {
   return text
@@ -8,6 +9,9 @@ export function parseMtExport(text) {
     .filter((block) => block.trim())
     .map(parseEntry);
 }
+
+// BODY の後に現れうる、既知の MT セクション見出し(BODY 自身を除く)。
+const OTHER_SECTION_KEYWORDS = ['EXTENDED BODY:', 'EXCERPT:', 'KEYWORDS:', 'COMMENT:', 'PING:'];
 
 function parseEntry(block) {
   const sections = block.split(/^-----$/m);
@@ -24,11 +28,60 @@ function parseEntry(block) {
     else if (key === 'CATEGORY') entry.categories.push(value);
   }
 
-  const bodySection = sections.find((s) => s.trim().startsWith('BODY:'));
-  if (bodySection) {
-    entry.body = bodySection.replace(/^\s*BODY:\n?/, '').trim();
+  const bodyIdx = sections.findIndex((s) => s.trim().startsWith('BODY:'));
+  if (bodyIdx !== -1) {
+    let body = sections[bodyIdx].replace(/^\s*BODY:\n?/, '');
+    let extended = '';
+
+    for (let i = bodyIdx + 1; i < sections.length; i += 1) {
+      const section = sections[i];
+      const trimmed = section.trim();
+
+      // 末尾の空セクションは、最後の実セクションを閉じる ----- の後に
+      // 何も無いだけの跡形。本文への連結対象ではない。
+      if (i === sections.length - 1 && trimmed === '') break;
+
+      const keyword = OTHER_SECTION_KEYWORDS.find((kw) => trimmed.startsWith(kw));
+      if (keyword) {
+        if (keyword === 'EXTENDED BODY:') {
+          extended = section.replace(/^\s*EXTENDED BODY:\n?/, '').trim();
+        }
+        // 既知セクションの境界に達したので、以降は本文として扱わない。
+        break;
+      }
+
+      // ----- 単独行が本文内(Markdown の水平線など)に埋め込まれていた
+      // せいで誤って区切られた偽陽性。区切り行を復元して本文に戻す。
+      body += '\n-----\n' + section;
+    }
+
+    body = body.trim();
+    entry.body = extended ? `${body}\n\n${extended}` : body;
   }
   return entry;
+}
+
+// 画像 URL(クエリ文字列も含む)を本文から抽出する正規表現。
+const IMAGE_URL_PATTERN = /https?:\/\/[^\s")]+\.(?:png|jpe?g|gif|webp)(?:\?[^\s")]*)?/g;
+
+export function extractImageUrls(body) {
+  return [...new Set(body.match(IMAGE_URL_PATTERN) ?? [])];
+}
+
+export function imageLocalName(url, usedNames) {
+  const { pathname } = new URL(url);
+  const base = path.basename(pathname);
+  const ext = path.extname(base);
+  const stem = base.slice(0, base.length - ext.length);
+
+  let name = base;
+  let n = 2;
+  while (usedNames.has(name)) {
+    name = `${stem}-${n}${ext}`;
+    n += 1;
+  }
+  usedNames.add(name);
+  return name;
 }
 
 export function parseMtDate(value) {

@@ -2325,6 +2325,8 @@ git add -A
 git commit -m "Add Hatena blog import script with MT parser tests"
 ```
 
+> **実行時修正(レビュー反映):** 上記リファレンスコードには 2 つの欠陥があった(本文中の `-----` 行での無音切り捨て・EXTENDED BODY の喪失/画像ダウンロードの例外未処理・basename 衝突・クエリ文字列)。実装は修正済みで、`scripts/` のコードと `mt-parser.test.mjs` を正とする。
+
 ---
 
 ### Task 10: CI + 仕上げ
