@@ -52,11 +52,13 @@ const { posts } = Astro.props;
 
   .etitle {
     color: var(--color-text-strong);
+    transition: color 0.25s, text-shadow 0.25s;
   }
 
   .etitle:hover {
     color: var(--color-accent);
     text-decoration: none;
+    text-shadow: 0 0 14px color-mix(in srgb, var(--color-accent-wash) 45%, transparent);
   }
 
   .draft-badge,

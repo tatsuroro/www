@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import PostList from '../components/PostList.astro';
+import PixelImage from '../components/PixelImage.astro';
 import { getPublishedPosts } from '../lib/posts';
 import profileData from '../data/profile.yaml';
 import type { Profile } from '../lib/types';
@@ -11,7 +12,7 @@ const posts = (await getPublishedPosts()).slice(0, 5);
 
 <Base>
   <section class="hero">
-    <img src={profile.avatar} alt={profile.name} width="72" height="72" />
+    <PixelImage src={profile.avatar} alt={profile.name} width={72} height={72} />
     <div>
       <h1>{profile.name}</h1>
       <p class="bio">{profile.bio}</p>
@@ -38,10 +39,6 @@ const posts = (await getPublishedPosts()).slice(0, 5);
     display: flex;
     align-items: center;
     gap: 1.2rem;
-  }
-
-  .hero img {
-    border-radius: 50%;
   }
 
   h1 {
