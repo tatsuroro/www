@@ -15,7 +15,12 @@ if (!/^[a-z0-9-]+$/.test(slug)) {
   process.exit(1);
 }
 
-const today = new Date().toISOString().slice(0, 10);
+const now = new Date();
+const today = [
+  now.getFullYear(),
+  String(now.getMonth() + 1).padStart(2, '0'),
+  String(now.getDate()).padStart(2, '0'),
+].join('-');
 const path = `src/content/blog/${today}-${slug}.md`;
 
 if (existsSync(path)) {
