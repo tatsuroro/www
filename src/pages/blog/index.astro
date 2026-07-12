@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { getPublishedPosts, type Post } from '../../lib/posts';
+
+const posts = await getPublishedPosts();
+const byYear = new Map<number, Post[]>();
+for (const post of posts) {
+  const year = post.data.publishedAt.getFullYear();
+  if (!byYear.has(year)) byYear.set(year, []);
+  byYear.get(year)!.push(post);
+}
+const years = [...byYear.keys()].sort((a, b) => b - a);
+---
+
+<Base title="blog">
+  <h1>blog</h1>
+  {
+    years.map((year) => (
+      <section>
+        <h2 class="year">{year}</h2>
+        <PostList posts={byYear.get(year)!} />
+      </section>
+    ))
+  }
+</Base>
+
+<style>
+  h1 {
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+  }
+
+  .year {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 1.5rem 0 0.75rem;
+  }
+</style>

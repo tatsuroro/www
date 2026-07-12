@@ -1,0 +1,86 @@
+---
+import { formatDate, type Post } from '../lib/posts';
+
+interface Props {
+  posts: Post[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul class="post-list">
+  {
+    posts.map((post) => (
+      <li>
+        <time datetime={post.data.publishedAt.toISOString()}>
+          {formatDate(post.data.publishedAt)}
+        </time>
+        <a class="etitle" href={`/blog/${post.id}`}>
+          {post.data.title}
+        </a>
+        {post.data.draft && <span class="draft-badge">draft</span>}
+        {post.data.tags.map((tag) => (
+          <a class="tag" href={`/tags/${tag}`}>
+            {tag}
+          </a>
+        ))}
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .post-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  time {
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: color-mix(in srgb, var(--color-accent) 72%, var(--color-text-muted));
+    flex-shrink: 0;
+  }
+
+  .etitle {
+    color: var(--color-text-strong);
+  }
+
+  .etitle:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .draft-badge,
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    padding: 1px 7px;
+    border-radius: 999px;
+    flex-shrink: 0;
+  }
+
+  .tag {
+    color: color-mix(in srgb, var(--color-accent) 85%, var(--color-text-strong));
+    background: color-mix(in srgb, var(--color-accent-wash) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent-wash) 30%, transparent);
+  }
+
+  .tag:hover {
+    text-decoration: none;
+    border-color: var(--color-accent);
+  }
+
+  .draft-badge {
+    color: var(--color-bg);
+    background: var(--color-text-muted);
+  }
+</style>
