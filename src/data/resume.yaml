@@ -1,0 +1,29 @@
+basics:
+  name: Tatsuro Nakamura
+  label: Software Developer
+  location: Fukuoka, Japan
+  summary: ''
+skills:
+  - name: Languages
+    keywords: [TypeScript, JavaScript]
+  - name: Engineering
+    keywords: [Web Frontend Application Structure]
+  - name: Design
+    keywords: [UI, Interaction design]
+  - name: Others
+    keywords: [Facilitation, Coaching]
+work:
+  - name: Ubie, Inc.
+    startDate: '2020'
+  - name: LINE Growth Technology Corporation
+    startDate: '2019'
+    endDate: '2020'
+  - name: Kaizen Platform, Inc.
+    startDate: '2015'
+    endDate: '2019'
+  - name: CyberAgent, Inc.
+    startDate: '2012'
+    endDate: '2015'
+  - name: Amateur scriptwriter and stage director / Web designer
+    startDate: '2005'
+    endDate: '2011'

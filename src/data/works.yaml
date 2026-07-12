@@ -1,0 +1,11 @@
+# ポートフォリオ作品。追加するときは以下の形式で works: の下に足す。
+# works が空の間、/resume の Works セクションは表示されない。
+#
+# works:
+#   - title: 作品名
+#     description: 一行説明
+#     url: https://example.com
+#     repo: https://github.com/tatsuroro/example
+#     tech: [TypeScript, Astro]
+#     year: 2026
+works: []
