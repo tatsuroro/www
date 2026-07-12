@@ -1,30 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# tatsuroro.com
 
-## Getting Started
+[Astro](https://astro.build/) 製の個人サイト。ブログ + プロフィール/レジュメ。
 
-First, run the development server:
+## 開発
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # 本番ビルド(dist/)
+npm run check    # 型検査
+npm run test     # 移行スクリプトのテスト
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 記事を書く
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+npm run new -- "記事タイトル" my-post-slug
+# → src/content/blog/YYYY-MM-DD-my-post-slug.md が draft: true で生成される
+npm run dev      # プレビュー(draft も表示される)
+# 公開するときは draft: true を削除して push(Vercel が自動デプロイ)
+```
 
-## Learn More
+## コンテンツの置き場所
 
-To learn more about Next.js, take a look at the following resources:
+| 内容 | ファイル |
+|---|---|
+| ブログ記事 | `src/content/blog/YYYY-MM-DD-slug.md` |
+| プロフィール | `src/data/profile.yaml` |
+| 職務経歴・スキル | `src/data/resume.yaml`(JSON Resume 準拠) |
+| ポートフォリオ作品 | `src/data/works.yaml` |
+| 記事画像 | `src/assets/blog/<slug>/` |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+frontmatter は `src/content.config.ts` の Zod スキーマで検証される。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## はてなブログからの移行
 
-## Deploy on Vercel
+```bash
+# はてなブログ管理画面 → 設定 → 詳細設定 → エクスポート(MT 形式)
+node scripts/import-hatena.mjs export.txt
+node scripts/import-hatena.mjs export.txt --download-images
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 設計ドキュメント
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 設計: `docs/superpowers/specs/2026-07-12-media-site-design.md`
+- 実装計画: `docs/superpowers/plans/2026-07-12-media-site.md`
