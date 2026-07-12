@@ -1,7 +1,78 @@
 ---
 import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import { getPublishedPosts } from '../lib/posts';
+import profileData from '../data/profile.yaml';
+import type { Profile } from '../lib/types';
+
+const profile = profileData as Profile;
+const posts = (await getPublishedPosts()).slice(0, 5);
 ---
 
 <Base>
-  <p>準備中</p>
+  <section class="hero">
+    <img src={profile.avatar} alt={profile.name} width="72" height="72" />
+    <div>
+      <h1>{profile.name}</h1>
+      <p class="bio">{profile.bio}</p>
+    </div>
+  </section>
+  <ul class="links">
+    {
+      profile.links.map((link) => (
+        <li>
+          <a href={link.url}>{link.label}</a>
+        </li>
+      ))
+    }
+  </ul>
+  <section class="recent">
+    <h2>recent posts</h2>
+    <PostList posts={posts} />
+    <p class="more"><a href="/blog">すべての記事 →</a></p>
+  </section>
 </Base>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .hero img {
+    border-radius: 50%;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .bio {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1.2rem;
+    margin: 1.2rem 0 2.5rem;
+    font-size: 0.85rem;
+  }
+
+  .recent h2 {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .more {
+    font-size: 0.85rem;
+    margin-top: 1rem;
+  }
+</style>
