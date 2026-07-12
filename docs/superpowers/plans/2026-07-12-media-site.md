@@ -13,6 +13,7 @@
 ## Global Constraints
 
 - Node 22+(ローカルは v24.14.1)、パッケージマネージャは npm
+- 実行時注記(2026-07-12): 最新 Astro は 7.0.7。計画中の「Astro 5」表記は「Astro 7」と読み替える(計画で使う API は 7.0.7 に存在することを確認済み)
 - 完全静的出力(Astro デフォルトの `output: 'static'`。SSR アダプタを入れない)
 - `site: 'https://tatsuroro.com'`
 - デザイントークン(spec の値を厳守):
