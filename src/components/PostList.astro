@@ -20,7 +20,7 @@ const { posts } = Astro.props;
         </a>
         {post.data.draft && <span class="draft-badge">draft</span>}
         {post.data.tags.map((tag) => (
-          <a class="tag" href={`/tags/${tag}`}>
+          <a class="tag" href={`/tags/${encodeURIComponent(tag)}`}>
             {tag}
           </a>
         ))}

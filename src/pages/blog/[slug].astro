@@ -36,7 +36,7 @@ const { Content } = await render(post);
         {post.data.updatedAt && <span>(更新: {formatDate(post.data.updatedAt)})</span>}
         {
           post.data.tags.map((tag) => (
-            <a class="tag" href={`/tags/${tag}`}>
+            <a class="tag" href={`/tags/${encodeURIComponent(tag)}`}>
               {tag}
             </a>
           ))

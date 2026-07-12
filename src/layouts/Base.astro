@@ -27,7 +27,10 @@ const pageTitle = title ? `${title} | tatsuroro` : 'tatsuroro';
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title="tatsuroro" href="/rss.xml" />
     <script is:inline>
-      const stored = localStorage.getItem('theme');
+      let stored = null;
+      try {
+        stored = localStorage.getItem('theme');
+      } catch {}
       const theme =
         stored === 'dark' || stored === 'light'
           ? stored
