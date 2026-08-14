@@ -64,8 +64,10 @@ function parseEntry(block) {
 // 画像 URL(クエリ文字列も含む)を本文から抽出する正規表現。
 const IMAGE_URL_PATTERN = /https?:\/\/[^\s")]+\.(?:png|jpe?g|gif|webp)(?:\?[^\s")]*)?/g;
 
+// 長さの降順で返す。呼び出し側が順に replaceAll するため、
+// 短い URL が長い URL の接頭辞だと先に食われて長いほうが壊れる。
 export function extractImageUrls(body) {
-  return [...new Set(body.match(IMAGE_URL_PATTERN) ?? [])];
+  return [...new Set(body.match(IMAGE_URL_PATTERN) ?? [])].sort((a, b) => b.length - a.length);
 }
 
 export function imageLocalName(url, usedNames) {
@@ -91,7 +93,12 @@ export function parseMtDate(value) {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-export function entryFilename(entry) {
+// BASENAME の日付(URL 由来)と DATE(実際の投稿日)が食い違う記事があるため、
+// ファイル名の日付は DATE を正とする。slugMap のキーだけが BASENAME。
+export function entryFilename(entry, slugMap = {}) {
+  const slug = slugMap[entry.basename];
+  if (slug) return `${entry.date}-${slug}.md`;
+
   const last = entry.basename.split('/').at(-1) || 'entry';
   return `${entry.date}-hatena-${last}.md`;
 }

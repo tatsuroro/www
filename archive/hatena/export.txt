@@ -1,0 +1,430 @@
+AUTHOR: tatsuroro
+TITLE: 2020年振り返り
+BASENAME: 2021/01/01/000006
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 01/01/2021 00:00:06
+IMAGE: https://cdn-ak.f.st-hatena.com/images/fotolife/t/tatsuroro/20201231/20201231234714.jpg
+-----
+BODY:
+<p>あと 45分しかない、、、！エクストリーム2020年振り返りをやります。</p>
+
+<h3>なんてったってコロナ</h3>
+
+<p>年のはじめには<a class="keyword" href="http://d.hatena.ne.jp/keyword/%C9%F0%B4%C1">武漢</a>がなんか大変そうだねーなんて笑っていたら、あれよあれよとSFが現実になっていった。<br />
+福岡は東京などに比べるとそれでもどこかのんびりしてて、マスク警察だなんだとピリピリしてることはなかったけど
+仕事はフルリモートに切り替わり、学校は休校、家族で家にいて、夏は大型のビニールプールがやたら売り切れていた。</p>
+
+<p>紅白聞きながらこれを書いてるけど、「しんどい時期ほど陽気な曲が増えるよね」という家族の言葉が響く。
+なんか慣れてしまったけど、歴史的な一年だったのよね。</p>
+
+<h3>仕事</h3>
+
+<p>そんな中転職した。もともと副業で手伝っていた Ubie 株式会社にソフトウェアエンジニアとして入社し、Kotlin や <a class="keyword" href="http://d.hatena.ne.jp/keyword/Rails">Rails</a> も書くようになった。<br />
+といってもまだ本格的にバックエンドを構築したりしてるわけではなく、フロントエンド開発が主ではあったので、来年はもっと深いところまでハマりにいきたい。<br />
+まわりのエンジニアが優秀すぎて幸せ。本当に優秀な人が身近にいて日常的に話ができるというのは何よりも福利厚生だし、自分にとっては成長源。</p>
+
+<p>Ubie では開発以外の、情報の透明性維持やエンジニア採用などのマネジメント風味な仕事も積極的に拾っていってるので開発一辺倒というわけにはいかないが、できる限りどちらも成果を出す。</p>
+
+<p>Ubie のミッションやカルチャーはすごく気に入っていて、かつ組織文化が性に合っているので、本当に運が良かったと思う。<br />
+組織が大きくなるにつれ変わっていくものもあるだろうけど、本質を見失わずにやりきっていきたい。</p>
+
+<p>ありがたいことに、副業で某社のフロントエンド開発サポートやアドバイザーとしても関わらせてもらうようになった。</p>
+
+<h3>断捨離とWFH環境改善</h3>
+
+<p>家にいる時間が増えて、散らかっていることによるストレスが増えたので徹底的に片付けた。<br />
+使ってない雑貨、着ない服、かさばる家具を捨てるか売るかしているうちに<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%DF%A5%CB%A5%DE%A5%EA%A5%BA%A5%E0">ミニマリズム</a>に目覚めたが、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Netflix">Netflix</a> の「<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%DF%A5%CB%A5%DE%A5%EA%A5%BA%A5%E0">ミニマリズム</a>」やこんまりの思想はちょっとやりすぎ感あって馴染まず、ほどほどに落ち着くことにした。<br />
+テレビも捨てて、思い切ってプロジェクターを導入したら<a class="keyword" href="http://d.hatena.ne.jp/keyword/QOL">QOL</a>がすごいことになった。</p>
+
+<p>自宅の仕事環境も見直した。
+転職してしばらくは<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B3%A5%EF%A1%BC%A5%AD%A5%F3%A5%B0%A5%B9%A5%DA%A1%BC%A5%B9">コワーキングスペース</a>で仕事するつもりでいたが、天神への移動が面倒になってきたのと感染リスクやらもろもろ踏まえて、自宅の環境整備の方に投資することにしてあれこれ買い揃えた。</p>
+
+<ul>
+<li>デスク（<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A6%A5%A9%A1%BC%A5%EB%A5%CA%A5%C3%A5%C8">ウォールナット</a>天板 + かなでものの脚）</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A2%A1%BC%A5%ED%A5%F3%A5%C1%A5%A7%A5%A2">アーロンチェア</a></li>
+<li>マイク &amp; マイクアーム（<a class="keyword" href="http://d.hatena.ne.jp/keyword/RODE">RODE</a> NT-USB）</li>
+<li>モニタースピーカー</li>
+<li>デスクトップPC（<a class="keyword" href="http://d.hatena.ne.jp/keyword/Linux">Linux</a> Desktop として組んだけど今はほぼゲーム用）</li>
+</ul>
+
+
+<p>ほか、ボリュームコントローラーなどあれこれ小物も導入して快適になった。</p>
+
+<p><figure class="figure-image figure-image-fotolife" title="仕事部屋の机"><span itemscope itemtype="http://schema.org/Photograph"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/t/tatsuroro/20201231/20201231234714.jpg" alt="f:id:tatsuroro:20201231234714j:plain" title="" class="hatena-fotolife" itemprop="image"></span><figcaption>仕事部屋の机</figcaption></figure></p>
+
+<h3>テニス上達した</h3>
+
+<p>緊急事態宣言が解除されることからテニス再開できたので、シングルス草トー優勝の目標を立てて練習した。<br />
+目標を設定したことで、勝つために必要な技術・戦術や自分に合った道具などを真剣に考えて練習するようになったのでとても良かった。<br />
+結果、一番下のクラスだけど優勝できたし、継続的にラケットやストリングの組み合わせを模索し続けて、ようやく自分に合ったラケット、ストリングに出会うことができた。</p>
+
+<p>ラケットは買い替えたりレンタルしたり、試し打ちさせてもらったりで計10機種くらい打った。  <br />
+ラジカルは球威が出ず、重さやフェイス面積、パワーレベルなどをどうするか悩んでピュアアエロに替えたりしてみたが、飛びすぎが怖くてフォーム崩れたので合わず。<br />
+結局<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D7%A5%EC%A5%B9%A5%C6%A1%BC%A5%B8">プレステージ</a>プロに落ち着く。重さで球威を出し、コン<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C8%A5%ED%A1%BC%A5%EB">トロール</a>しつつ振り切って収めるスタイル。</p>
+
+<p>模索してる途中で、ラケットとストリングの種類、組み合わせ、プレイスタイルとの相性などを調べるのに困ったので、エンジニアリングでどうにかしたい気持ちが高まってる。<br />
+個人サービス作り始めているが、未だ完成せず。2021年にはリリースしたい。</p>
+
+<h3>ウェブ<a class="keyword" href="http://d.hatena.ne.jp/keyword/%C6%EC%CA%B8%BB%FE%C2%E5">縄文時代</a>への憧れ</h3>
+
+<p>ここまでつらつら書いておいてなんだけど、ブログプラットフォームを離れて自前ブログに戻りたいと思い始めた。
+古き良きかつてのウェブ、ではないけれど、運営の意向ひとつで方針が変わるプラットフォームから離れて自分のやりたいようにやるのはしっくりくるものがある。<br />
+正月休みの間にやってしまおうか。</p>
+
+<h3>まとめ</h3>
+
+<p>（記事公開が0時ちょうどになってしまった）<br />
+2021年も、仕事とテニスと個人開発やっていきます。</p>
+
+-----
+--------
+AUTHOR: tatsuroro
+TITLE: 2020年5月時点でも MySQL 8.0 で Sequel Pro 使うには nightly build が必要だった
+BASENAME: 2020/05/14/112654
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 05/14/2020 11:26:54
+-----
+BODY:
+<p>タイトルの通り。</p>
+
+<p>以下記事などを参考に nightly build をインストールし、無事接続できました
+<a href="https://qiita.com/yasudanaoya/items/2112e13e2ba164bdf47c">https://qiita.com/yasudanaoya/items/2112e13e2ba164bdf47c</a></p>
+
+-----
+--------
+AUTHOR: tatsuroro
+TITLE: HTTPヘッダーの Content-Disposition について調べたメモ
+BASENAME: 2018/09/25/160808
+STATUS: Draft
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 09/25/2018 16:08:08
+-----
+BODY:
+<ul>
+<li><p>これなに</p></li>
+<li><p>Content-Disposition とは</p></li>
+<li><p>対応状況</p></li>
+<li><p>挙動</p></li>
+<li><p><a download="" >hoge</a> との兼ね合い</p></li>
+<li><p>まとめ</p></li>
+</ul>
+
+
+-----
+--------
+AUTHOR: tatsuroro
+TITLE: 分子生物学の進歩に思いをはせる、その他のログ
+BASENAME: 2018/09/18/172226
+STATUS: Draft
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 09/18/2018 17:22:26
+-----
+BODY:
+<p>テクニカルななにか</p>
+
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A1%BC%A5%CD%A5%F3%A5%C8">コンポーネント</a>の分け方、設計の仕方でちょいちょい悩みがち</p>
+
+<p>精神と物質は微妙だった、
+<a class="keyword" href="http://d.hatena.ne.jp/keyword/%C6%B0%C5%AA%CA%BF%B9%D5">動的平衡</a>と、融けるデザインは同じところを見ていそうな感
+なぜ世界は存在しないのか</p>
+
+<p>テニス
+右足を軸にした方がパワー出る模様</p>
+
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%A4%A5%C3%A5%C1%A5%D2%A5%C3%A5%BF%A1%BC">スイッチヒッター</a>はグリップ変えるのめんどい
+スイッチサーバーはかつていたそうな
+片手バックハンドは高いとこ打ちにくいよねやっぱり</p>
+
+-----
+--------
+AUTHOR: tatsuroro
+TITLE: AI が趣味嗜好を解析して提供してくれる時代に個人のスタイルはどう確立されるのか
+BASENAME: 2018/09/11/122346
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 09/11/2018 12:23:46
+-----
+BODY:
+<p><span itemscope itemtype="http://schema.org/Photograph"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/t/tatsuroro/20180911/20180911120105.png" alt="f:id:tatsuroro:20180911120105p:plain" title="f:id:tatsuroro:20180911120105p:plain" class="hatena-fotolife" itemprop="image"></span></p>
+
+<p>Motion Graphics とか VJ なんかの映像表現が好きで、見ていて飽きないのだけど、
+インスタグラムで MotionGraphics のおすすめアカウントを見つけて、センス良い表現を次々拾えるようになって素敵だった。</p>
+
+<p>一昔前のインターネットにあった玉石混交なカオスさはすっかり鳴りを潜め、レコメンドエンジンは<a class="keyword" href="http://d.hatena.ne.jp/keyword/%B5%A1%B3%A3%B3%D8%BD%AC">機械学習</a>の成果を高め続けている。まあ良い時代やなとつらつら眺めながら、ふと怖くなった。</p>
+
+<p>こんなふうに、自分で探さず流れてくるものをただ吸収していたら、自分の好みやスタイルはどうなっていくんだろう？初期値は？子供の頃の環境？</p>
+
+<p>4歳の息子は毎日 <a class="keyword" href="http://d.hatena.ne.jp/keyword/Netflix">Netflix</a> や <a class="keyword" href="http://d.hatena.ne.jp/keyword/Amazon%20Prime">Amazon Prime</a> Video で好きなアニメを見て楽しんでいる。
+（<a class="keyword" href="http://d.hatena.ne.jp/keyword/YouTube">YouTube</a> はおもちゃレビュー動画ばかりなので禁止してる）</p>
+
+<p>子供の頃最初に触れるメディアが <a class="keyword" href="http://d.hatena.ne.jp/keyword/YouTube">YouTube</a> や <a class="keyword" href="http://d.hatena.ne.jp/keyword/Netflix">Netflix</a> みたいな、「洗練された」ものだけになって、最初にアカウントつくって見る動画がそれらメディアのおすすめによるとしたら、それは大多数の好みによって誘導される大多数の意見なのではないか？</p>
+
+<p>どこまでいっても「○○」が好きなあなたには「XX」をオススメされる世界。</p>
+
+<p>個人の趣味嗜好やスタイルが育つ前に、大多数の取捨選択結果とAIによる解釈が同質化を進めるのでは？きちんと個々人の好みが細分化していって、現代のような（ある意味分断されがちな）コミュニティへ分かたれていけるのだろうか？</p>
+
+<p>と、ここまで考えて杞憂だなと思った。そんなの今に始まった話ではなかった。</p>
+
+<p>人間の気質は遺伝的要素で7割決まっているという研究もあるし</p>
+
+<p>初期値はあらかじめ決まっていて、あくまでも取捨選択と AI によるパターン分析と解釈があるだけなら、人間の（特に子供の）好奇心がそんな枠で収まりきることもない。つまるところ「好きなもの」を追求していくだけで、そのうち AI のレコメンドなんかには「飽き」て、より新しいもの、画期的なもの、共感できるものへと移っていくんだろう
+クリエイティビティが AI を使いこなす世界。<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B8%A5%E3%A1%BC%A5%D3%A5%B9">ジャービス</a>。</p>
+
+<p>アイアンマンは<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B8%A5%E3%A1%BC%A5%D3%A5%B9">ジャービス</a>とスーツ作ってるシーンがなにげに一番ワクワクする。</p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.cinematoday.jp%2Fnews%2FN0079305" title="『アイアンマン』J.A.R.V.I.S.をリアルに作る！FacebookCEOの今年の目標が壮大 - シネマトゥデイ" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://www.cinematoday.jp/news/N0079305">www.cinematoday.jp</a></cite></p>
+
+-----
+--------
+AUTHOR: tatsuroro
+TITLE: 部活やサークル運営をかんたん便利にするようなサービスこそ LINE が作ればいいのに
+BASENAME: 2018/08/30/102721
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 08/30/2018 10:27:21
+-----
+BODY:
+<p>趣味のテニスの話<br/>
+テニスサークルに参加したいと思い、ご縁をいただいて顔を出す中で、テニスサークルのスケジュール管理と参加者調整をもっとスマートにできないだろうかと思いはじめた。</p>
+
+<p>小さめのサークルだと、だいたい LINEグループで連絡を取っている。
+<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C8%A1%BC%A5%AF">トーク</a>内に一ヶ月分のスケジュールと参加予定者をテキストで書いて、アップデートがあればその都度送るのだけど、どう見ても効率が悪そうだ。</p>
+
+<p>テニススクールのイベント案内も、LINE <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C8%A1%BC%A5%AF">トーク</a>にテキストで飛んでくる。こちらは Webサイトの予約フォームへのリンクなのでまだ楽だけど、Webサイトが<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B9%A5%DE%A5%DB">スマホ</a>対応してなかったり、不便が多い。<br/>
+もっと手軽に予約したい。</p>
+
+<p>サークルのスケジュール管理サービスなんてすでにたくさんありそうだと思って探してみたら、だいたいどれも<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B0%A5%EB%A1%BC%A5%D7%A5%A6%A5%A7%A5%A2">グループウェア</a>的な性格で、そのサービス内にコミュニケーションを囲い込もうと意図しているようだった。<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B5%A5%A4%A5%DC%A5%A6%A5%BA">サイボウズ</a>的な。（<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%B5%A5%A4%A5%DC%A5%A6%A5%BALive">サイボウズLive</a>は 2019年4月でサービス終了だった）</p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fclubkatsudo.com%2F" title="クラブ活動.com - スケジュール管理 出欠管理 掲示板 無料 グループウェア" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://clubkatsudo.com/">clubkatsudo.com</a></cite></p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.c-sqr.net%2F" title="サークルスクエア - スケジュール共有･出欠管理に | 無料グループウェア - 携帯,スマホ(スマートフォン),アプリ対応" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://www.c-sqr.net/">www.c-sqr.net</a></cite></p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.team-manage.com%2F" title="Team Manage チームマネージ" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://www.team-manage.com/">www.team-manage.com</a></cite></p>
+
+<p>どれも求めてるものとちょっと違う。<br/>
+プラットフォームは LINE でいい。もはやインフラなので<br/>
+新規メン<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%D0%A1%BC">バー</a>入るたびに「このサービスにアクセスして登録してね！」みたいなのは面倒くさすぎる。</p>
+
+<p>LINEスケジュールはあるけど、これは単発イベント向けなので継続的なスケジュール管理は想定していない。</p>
+
+<p><img src="http://lineofficial.blogimg.jp/ja/imgs/f/d/fde02536-s.png" alt="" /></p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fschedule.line.me%2F" title="LINEスケジュール" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://schedule.line.me/">schedule.line.me</a></cite></p>
+
+<p>趣味は生活の延長なので、使うサービスは透明性を高めたい。<br/>
+その点で LINE は頭ひとつ抜けている。</p>
+
+<p>LINE、エンジニア大量採用かけているし
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fengineering.linecorp.com%2Fja%2Fblog%2Fdetail%2F330" title="【イベント開催レポート】LINEはエンジニア3000名規模へ！LINEエンジニア採用の日 : LINE Engineering Blog" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://engineering.linecorp.com/ja/blog/detail/330">engineering.linecorp.com</a></cite></p>
+
+<p>福岡市との連携もはじまったし
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgamebiz.jp%2F%3Fp%3D218627" title="LINEとLINE Fukuoka、福岡市と地域共働事業に関する包括連携協定を締結　AIやFintechなどの技術を組み合わせた取り組みを推進 | Social Game Info" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://gamebiz.jp/?p=218627">gamebiz.jp</a></cite></p>
+
+<p>生活のデジタルインフラとして浸透していくと面白そう。</p>
+
+<p>とはいえ、趣味領域のデジタルサービスは大きくマネタイズする領域ではなさそうなので<br/>
+当分はユーザー側でうまいことやってね、になるだろうな<br/>
+（だからこそ LINE くらい大きい会社にやってほしいのだけど）<br/>
+今年はキャッシュレスの覇権争いで各社忙しそうだし</p>
+
+<p>サービス作る余地ありそう。<br/>
+LINE Developers を眺めながら、なにかうまいことできんかなと思案中。<br/>
+<a href="https://developers.line.me/ja/">LINE Developers</a></p>
+
+-----
+--------
+AUTHOR: tatsuroro
+TITLE: エンジニアブログをどのサービスで書くか悩み、結局はてなブログに落ち着いた話
+BASENAME: 2018/08/27/021844
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 08/27/2018 02:18:44
+-----
+BODY:
+<p>子育てやらの家庭の事情で汲々としていてアウトプットを怠っていたが、さすがに危機感を覚えてブログ書こう、書きたいと思い立つ。<br/>
+自前で StaticSiteGenerator 運用してもよかったけど、ソーシャルシェアとか関連記事表示とか、ブログの機能面で追従する手間が惜しいので、ブログサービスに乗ることにした。<br/>
+自前で機能実装することでスキルを磨くのだという向きもあるだろうけど、ブログは書くことに集中したかったのでスキルは他で磨くと決め。<br/>
+さて今から書くならどのサービスがよかろうかと調べてみたのでメモ。</p>
+
+<p>候補は以下</p>
+
+<ul>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA%A5%D6%A5%ED%A5%B0">はてなブログ</a></li>
+<li>Medium</li>
+<li>dev.to</li>
+<li>note</li>
+<li>Qiita</li>
+<li><a class="keyword" href="http://d.hatena.ne.jp/keyword/WordPress">WordPress</a> or other （自前）</li>
+</ul>
+
+
+<p>結論、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA%A5%D6%A5%ED%A5%B0">はてなブログ</a>に落ち着く。</p>
+
+<p>理由は、日本在住のエンジニアが、主に日本の読者向けに、ある程度のゆるさでブログ書くのに一番しっくり来たから。
+あと周りのWebエンジニアに<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA">はてな</a>使ってる人が多かったので。
+界隈とかコミュニティについてはよく知らない。本質はそこでは無いので別に気にしない。</p>
+
+<p>以下、各候補についての検討内容</p>
+
+<h3>Medium</h3>
+
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA">はてな</a>と Medium でだいぶ悩んだ。が、Medium は総じてジャーナリズム感が強くて、ゆるい記事（趣味の話や<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%E9%A5%A4%A5%D5%A5%ED%A5%B0">ライフログ</a>）を書くのは気が引けた。書いても別に誰も困らないだろうけど、<a class="keyword" href="http://d.hatena.ne.jp/keyword/%BF%B4%CD%FD%C5%AA">心理的</a>距離という意味で。<br/>
+書いた記事が自分の手を離れて Medium や <a class="keyword" href="http://d.hatena.ne.jp/keyword/SNS">SNS</a> のネットワークを拡散していく、のが狙いだろうし醍醐味だと感じたので、ある程度オピニオンをまとめて投稿したい時に活用すれば良さそう。<br/>
+一時期言われてた <code>Medlim だと SEO が弱い（Google の検索結果に出ない）</code> は、今はそんなこと無さそうだった。</p>
+
+<h3>dev.to</h3>
+
+<p>英語で記事書く場所。玉石混交感。<a class="keyword" href="http://d.hatena.ne.jp/keyword/%C6%FC%CB%DC%B8%EC%A4%C7%A4%AA%A3%EB">日本語でおｋ</a>が良かったので除外</p>
+
+<h3>note</h3>
+
+<p>ブログを書く場所ではなく、「価値ある文章」を「価値を感じる人」のもとへ届ける（買ってもらう）サービス。<br/>
+「つくる、つながる、とどける」がテーマなので読者にとどける文章のクオリティもそれなりに大事そうだしゆるく書くのはこれまた気が引ける<br/>
+だったら連載小説かエッセイ書くわ、という気持ちになった。</p>
+
+<h3>Qiita</h3>
+
+<p>エンジニアリング Tips 以外書けない。最初からそういう趣旨のサービスなので文句を言う筋合いではない、つまりニーズとマッチしてない。</p>
+
+<h3><a class="keyword" href="http://d.hatena.ne.jp/keyword/WordPress">WordPress</a> or 自前</h3>
+
+<p>広告無いとかデザイン自由度とか編集方法とか、メリットはたくさんある。が、ブログメンテに手間かけたくないので除外</p>
+
+<p>...</p>
+
+<p>そんなわけで<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA%A5%D6%A5%ED%A5%B0">はてなブログ</a>。ゆるめに続けていこうと思う。
+アウトプットする、と決めると俄然インプットに対してアンテナが立つので良い。
+<code>あれについて書きたい</code> -> <code>ネタが足りない、膨らませたい</code> -> <code>へーこんな情報あるんだ知らんかった</code> という感じ</p>
+
+<p>エンジニア生活ブログと言いつつテニスの話ばかり書くかもしれないが、そこは趣味も生活の一部ということでご容赦いただきたく。</p>
+
+<p>「趣味と仕事を同じにすると効率が良い」と数名のエンジニア諸氏から聞き、共感はしつつも<br/>
+別にわざわざそんな宣言しなくても、好き好きでいいんじゃないという気持ちになった今日このごろ  <br/>
+自分の趣味は8割テニス、2割SF（＆映画・マンガ）なので仕事の効率が上がるかどうか微妙ですが<br/>
+まあ健康維持には約立ってそうです。</p>
+
+-----
+--------
+AUTHOR: tatsuroro
+TITLE: Boostnote の Vim keymap 時にキーリピートを有効にする
+BASENAME: 2018/08/25/000000
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 08/25/2018 00:00:00
+-----
+BODY:
+<p>理想のメモアプリを求めてしばらくさまよっていた。Bear みたく<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AF%A5%E9%A5%A6%A5%C9">クラウド</a>で同期できて、Simplenote みたく無料で使えて、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Vim">Vim</a> みたく <a class="keyword" href="http://d.hatena.ne.jp/keyword/Vim">Vim</a> <a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%AD%A1%BC%A5%D0%A5%A4%A5%F3%A5%C9">キーバインド</a>で書けるアプリを探してて、もう作ろうかと思っていたら Boostnote に出会った（遅まきながら)</p>
+
+<p>Boostnote、必要な機能がちょうどいい UX で実装されていて、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Vim">Vim</a> keymap も最高で最高であったが、
+<a class="keyword" href="http://d.hatena.ne.jp/keyword/Vim">Vim</a> keymap 時に <code>j</code>, <code>k</code> などのキーリピートが効かなかったので、<a class="keyword" href="http://d.hatena.ne.jp/keyword/VSCode">VSCode</a> の設定を流用して解決した。</p>
+
+<p>手元の環境は <a class="keyword" href="http://d.hatena.ne.jp/keyword/MacOS">MacOS</a> High <a class="keyword" href="http://d.hatena.ne.jp/keyword/Sierra">Sierra</a>。</p>
+
+<pre class="code" data-lang="" data-unlink>defaults write com.maisin.boost ApplePressAndHoldEnabled -bool false
+defaults write com.maisin.boost.helper ApplePressAndHoldEnabled -bool false</pre>
+
+
+<p>上記設定で <code>j</code> <code>k</code> などのキーリピートが動くようになる。</p>
+
+<p>余談だけど、 <code>com.maisin</code> てなんぞと思ったら開発元の会社名が MAISIN&amp;CO.株式会社 だったのね
+福岡本社だし東京オフィスがラトゥール新宿だし（かつて KaizenPlatform も入居していた)、勝手に親近感が沸いた
+<a href="https://maisin.co/">https://maisin.co/</a></p>
+
+<p>Boostnote 良いです。モバイルアプリがこれからなので、コントリビュートしていきたい。</p>
+
+-----
+--------
+AUTHOR: tatsuroro
+TITLE: git diff のカラー設定を変更する
+BASENAME: 2018/08/25/033618
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 08/25/2018 03:36:18
+-----
+BODY:
+<p>普段ターミナルの文字色を緑色にして使っているが、git の diff color も緑色で、変更箇所がぜんぜんハイライトされていなかったのでカラー設定を調整した。</p>
+
+<p><code>~/.gitconfig</code> に以下設定を追加</p>
+
+<pre class="code" data-lang="" data-unlink>[color &#34;diff&#34;]
+  meta = green
+  frag = blue
+  old = red
+  new = white</pre>
+
+
+<p>参考記事にはターミナルのデフォルトカラーを使用する設定もあったが、ちょこまかカラーいじってるのでいったん手動設定にする。</p>
+
+<h3>参考</h3>
+
+<p><a href="http://orangeclover.hatenablog.com/entry/20120920/1348086391">git diffのカラー設定を変更する</a></p>
+
+-----
+--------
+AUTHOR: tatsuroro
+TITLE: Circle CI で Git submodule を Clone する（Circle CI ver.2.0)
+BASENAME: 2018/08/25/032954
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 08/25/2018 03:29:54
+-----
+BODY:
+<p>※ ブログを StaticSite で構築してた時のログを<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA">はてな</a>にインポートしたものです</p>
+
+<ul>
+<li>ブログでアウトプットする習慣をつくろうと思い、手始めに構成を変えた</li>
+<li>hugo + Circle CI deploying + firebase hosting にした。身近な良さげな構成に思い切り乗っかった</li>
+<li>Circle CI が ver.2.0 でとても速くなったと聞いたので試したら、秒速デプロイで最高になった</li>
+<li>ついでに docker image も作って、あとでデプロイ内容をカスタマイズしやすいようにした</li>
+<li>ついでに hugo theme もフォークして、自分好みにカスタマイズしたい所存(今後やる)</li>
+<li>forked theme を blog repository の submodule として配置したら、CI デプロイ時に index.html が生成されなくなり、原因を調べたところ表題の submodule clone が行われてないためにテーマファイルがロードされてなかったのであった</li>
+</ul>
+
+
+<h3>Circle CI で Git submodule を Clone する</h3>
+
+<p>Circle CI v1 では以下とのこと。</p>
+
+<p><a href="http://qiita.com/tbpgr/items/1f2e18954327e38de1de">Circle CI で git の submodule を含めてテストをする</a>
+<a href="https://project-flora.net/2017/04/10/circle-ci%E3%81%A7git-submodule%E3%82%92%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%B3%E3%81%97%E3%81%9F%E3%81%84%E5%A0%B4%E5%90%88/">Circle CIでgit submoduleをクローンしたい場合</a></p>
+
+<p>ver.2.0 の場合、checkout にサブコマンド無さそうだったので、以下のように書いて解決した。</p>
+
+<pre class="code" data-lang="" data-unlink>steps:
+  - checkout
+  - run: |
+      git submodule sync
+      git submodule update --init</pre>
+
+
+<p>Git submodule 便利。初歩的な穴に落ちて、挙動への理解が深まった。</p>
+
+-----
+--------
+AUTHOR: tatsuroro
+TITLE: フロントエンドの適材適所と、エンジニアは何を学ぶべきか
+BASENAME: 2018/08/25/032939
+STATUS: Publish
+ALLOW COMMENTS: 1
+CONVERT BREAKS: 0
+DATE: 12/09/2017 03:29:39
+-----
+BODY:
+<p>弊社ものづくりブログに記事を書きました。</p>
+
+<p><a href="https://medium.com/kaizen-product-team/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89%E3%81%AE%E9%81%A9%E6%9D%90%E9%81%A9%E6%89%80%E3%81%A8-%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AF%E4%BD%95%E3%82%92%E5%AD%A6%E3%81%B6%E3%81%B9%E3%81%8D%E3%81%8B-da41ae68bff2#.3yxqp7lzl">フロントエンドの適材適所と、エンジニアは何を学ぶべきか</a></p>
+
+-----
+--------

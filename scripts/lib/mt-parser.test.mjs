@@ -148,3 +148,58 @@ test('imageLocalName は basename が衝突すると -2, -3 を付与する', ()
   assert.equal(second, 'foo-2.png');
   assert.equal(third, 'foo-3.png');
 });
+
+// --- slug-map による出力ファイル名 ---
+
+const slugMapSample = `AUTHOR: tatsuroro
+TITLE: 日付がずれている記事
+BASENAME: 2018/08/25/032939
+STATUS: Publish
+DATE: 12/09/2017 03:29:39
+-----
+BODY:
+<p>本文</p>
+-----
+--------
+`;
+
+test('slugMap にヒットすると DATE の日付 + slug のファイル名になる', () => {
+  const [entry] = parseMtExport(slugMapSample);
+  const slugMap = { '2018/08/25/032939': 'frontend-and-what-to-learn' };
+  assert.equal(entryFilename(entry, slugMap), '2017-12-09-frontend-and-what-to-learn.md');
+});
+
+test('slugMap に無い BASENAME は従来の自動命名にフォールバックする', () => {
+  const [entry] = parseMtExport(slugMapSample);
+  assert.equal(entryFilename(entry, { '9999/99/99/999999': 'other' }), '2017-12-09-hatena-032939.md');
+});
+
+test('slugMap 引数を省略すると従来どおりの自動命名になる', () => {
+  const [entry] = parseMtExport(slugMapSample);
+  assert.equal(entryFilename(entry), '2017-12-09-hatena-032939.md');
+});
+
+// --- 置換順序: 短い URL が長い URL の接頭辞であるケース ---
+
+test('extractImageUrls は長さの降順で返す（接頭辞の取り違えを防ぐ）', () => {
+  const body = [
+    '![a](https://example.com/img.png)',
+    '![b](https://example.com/img.png?size=large)',
+  ].join(' ');
+  assert.deepEqual(extractImageUrls(body), [
+    'https://example.com/img.png?size=large',
+    'https://example.com/img.png',
+  ]);
+});
+
+test('順に replaceAll しても短い URL が長い URL を壊さない', () => {
+  let body = '![a](https://example.com/img.png) ![b](https://example.com/img.png?size=large)';
+  const local = {
+    'https://example.com/img.png': './img.png',
+    'https://example.com/img.png?size=large': './img-2.png',
+  };
+  for (const url of extractImageUrls(body)) {
+    body = body.replaceAll(url, local[url]);
+  }
+  assert.equal(body, '![a](./img.png) ![b](./img-2.png)');
+});
