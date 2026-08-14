@@ -91,7 +91,12 @@ export function parseMtDate(value) {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-export function entryFilename(entry) {
+// BASENAME の日付(URL 由来)と DATE(実際の投稿日)が食い違う記事があるため、
+// ファイル名の日付は DATE を正とする。slugMap のキーだけが BASENAME。
+export function entryFilename(entry, slugMap = {}) {
+  const slug = slugMap[entry.basename];
+  if (slug) return `${entry.date}-${slug}.md`;
+
   const last = entry.basename.split('/').at(-1) || 'entry';
   return `${entry.date}-hatena-${last}.md`;
 }
