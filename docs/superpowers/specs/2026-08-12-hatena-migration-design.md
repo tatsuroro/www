@@ -10,10 +10,9 @@
 
 | 項目 | 状態 |
 |---|---|
-| PR #4 `rebuild-with-astro → main` | open、未マージ |
-| 新サイトの公開状態 | 未公開。`tatsuroro.com` は今も Vercel の旧 Next.js サイトを配信中 |
-| GitHub Pages | `build_type: workflow` で有効化済みだが `status: null`（未ビルド）、`cname` 未設定 |
-| `deploy.yml` | `rebuild-with-astro` ブランチにのみ存在。main に無いためデプロイ未発火 |
+| PR #4 `rebuild-with-astro → main` | **2026-08-14 マージ済み**（`264f123`） |
+| GitHub Pages | **デプロイ成功**。`https://tatsuroro.github.io/www/` が 200 を返す。`cname` は未設定 |
+| `tatsuroro.com` | **未切替**。今も Vercel の旧 Next.js サイトを配信中 |
 | 移行スクリプト | `scripts/import-hatena.mjs` と `scripts/lib/mt-parser.mjs` は実装・テスト済み。未実行 |
 | `src/assets/blog/hatena/` | 空 |
 | DNS | レジストラ Squarespace Domains II LLC、NS `ns-cloud-e{1..4}.googledomains.com`、A レコード `216.198.79.1`（Vercel） |
@@ -79,7 +78,7 @@ http://lineofficial.blogimg.jp/ja/imgs/f/d/fde02536-s.png
 
 移行より先に実施し、PR #4 とは別に扱う。デプロイが失敗したときに「Pages の設定問題」と「移行した記事の問題」を同時に疑わずに済む。
 
-1. PR #4 をマージ → main で `deploy.yml` が発火
+1. ~~PR #4 をマージ → main で `deploy.yml` が発火~~ **完了（2026-08-14）**
 2. GitHub Pages にカスタムドメイン `tatsuroro.com` を設定
 3. Squarespace の DNS を切り替え
    - A レコード: `216.198.79.1` → `185.199.108.153` / `185.199.109.153` / `185.199.110.153` / `185.199.111.153`
@@ -111,7 +110,7 @@ MT エクスポートから Markdown を生成し、画像 3 件をローカル�
 
 ## スクリプト設計
 
-`scripts/import-hatena.mjs` と `scripts/lib/mt-parser.mjs` を改修する。新規スクリプトは作らない。
+`scripts/import-hatena.mjs` と `scripts/lib/mt-parser.mjs` を改修する。新規の CLI スクリプトは作らないが、はてな固有 HTML の変換ルールは責務が異なるため `scripts/lib/hatena-html.mjs` として分離する。`mt-parser.mjs` の責務は MT 形式のパースであり、HTML → Markdown 変換を混ぜない。
 
 ```
 node scripts/import-hatena.mjs archive/hatena/export.txt \
@@ -131,13 +130,17 @@ turndown の `addRule` で処理する。正規表現による HTML 前処理で
 
 判定は `class="keyword"` を持つ `<a>` に限定する。同じ `d.hatena.ne.jp` でも `class="keyword"` の無いリンクは本人が張った引用リンクなので残す。
 
-**ブログカード iframe（7 件）** — `hatenablog-parts.com` の埋め込みカード。旧ブログ削除後も生きるが外部依存であり、Markdown で表現できない。`src` の `url=` パラメータを URL デコードし、`title` 属性をリンクテキストにして通常のリンクへ変換する。
+**ブログカード（7 件）** — `hatenablog-parts.com` の埋め込みカード。実際の構造は iframe と `<cite>` の対で、**7 件すべてが対になっている**（iframe 7 / cite 7 / 隣接 7）。
 
 ```html
 <iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fclubkatsudo.com%2F"
-        title="クラブ活動.com - スケジュール管理 出欠管理 掲示板 無料 グループウェア" ...>
+        title="クラブ活動.com - スケジュール管理 出欠管理 掲示板 無料 グループウェア"
+        class="embed-card embed-webcard" ...></iframe><cite class="hatena-citation"><a
+        href="https://clubkatsudo.com/">clubkatsudo.com</a></cite>
 ```
-↓
+
+`<cite>` 側に実 URL のリンクがあるため iframe を捨てるだけでもリンクは残るが、そのリンクテキストはドメイン名（`clubkatsudo.com`）でしかない。iframe の `title` 属性のほうが情報量が多いので、**iframe を `[title](デコードした url)` に変換し、`<cite>` は除去する**（残すとリンクが重複するため）。
+
 ```markdown
 [クラブ活動.com - スケジュール管理 出欠管理 掲示板 無料 グループウェア](https://clubkatsudo.com/)
 ```
@@ -145,6 +148,10 @@ turndown の `addRule` で処理する。正規表現による HTML 前処理で
 **フォトライフ画像の alt / title（2 件）** — `alt="f:id:tatsuroro:20180911120105p:plain"` は内部識別子であり読み手に意味がない。同じ値が `title` 属性にも入っており、素の turndown では `![f:id:...](url "f:id:...")` と 2 箇所に出る。`f:id:` で始まる alt と title の両方を落とし、`![](path)` にする。
 
 **コードブロック `<pre class="code">`（3 件）** — `<code>` をネストしないため turndown の既定ルールが発火せず、中身がエスケープされたプレーンテキストになる。`<pre>` に対するルールを追加し、fenced code block として出力する。`data-lang` 属性が非空ならフェンスの言語指定に使う（実測では 3 件とも空なので言語なしになるが、正しさのため実装する）。
+
+### 旧記事間リンクの書き換えは不要
+
+当初は旧記事同士のリンクを新サイトの相対パスへ置換する改修を予定していたが、エクスポート実測で `tatsuroro.hateblo.jp` への参照が **0 件**であることを確認した。本文中の外部リンクはすべて他サイト宛であり、書き換え対象は存在しない。この改修は実装しない。
 
 ### 改修 2: `--slug-map <file>`
 
@@ -166,12 +173,17 @@ turndown の `addRule` で処理する。正規表現による HTML 前処理で
 
 ## テスト
 
-`scripts/lib/mt-parser.test.mjs` に追加する。node:test を使う既存の方針を踏襲する。
+node:test を使う既存の方針を踏襲する。
+
+`scripts/lib/hatena-html.test.mjs`（新規）:
 
 - はてなキーワードリンクの除去（`class="keyword"` あり → 除去、なし → 保持）
-- ブログカード iframe → Markdown リンク変換（URL デコードを含む）
+- ブログカード iframe → Markdown リンク変換（URL デコードを含む）と `<cite>` の除去
 - フォトライフ画像の alt / title 除去
 - `<pre class="code">` の fenced code block 化（エスケープされないこと、`data-lang` 非空なら言語指定が付くこと）
+
+`scripts/lib/mt-parser.test.mjs`（既存に追加）:
+
 - slug-map 適用時の出力ファイル名（DATE と BASENAME が食い違うケースを含む）
 - slug-map 未指定 BASENAME の自動命名フォールバック
 - 画像 URL 置換の最長一致順（短い URL が長い URL の接頭辞であるケース）
@@ -184,7 +196,7 @@ turndown の `addRule` で処理する。正規表現による HTML 前処理で
    - `cdn-ak.f.st-hatena.com` — 画像がローカル化されたこと
    - `d.hatena.ne.jp` — キーワードリンクが除去されたこと
    - `hatenablog-parts.com` — ブログカードがリンク化されたこと
-   - `hateblo.jp` — 旧ブログ自身への参照が無いこと
+   - `hateblo.jp` — 旧ブログ自身への参照が無いこと（実測 0 件なので回帰チェック）
    - `lineofficial.blogimg.jp` — 外部画像がローカル化されたこと
 
    `orangeclover.hatenablog.com` は本人が張った他者ブログへの引用リンクであり、**残してよい**。grep の対象から除外する。
