@@ -64,8 +64,10 @@ function parseEntry(block) {
 // 画像 URL(クエリ文字列も含む)を本文から抽出する正規表現。
 const IMAGE_URL_PATTERN = /https?:\/\/[^\s")]+\.(?:png|jpe?g|gif|webp)(?:\?[^\s")]*)?/g;
 
+// 長さの降順で返す。呼び出し側が順に replaceAll するため、
+// 短い URL が長い URL の接頭辞だと先に食われて長いほうが壊れる。
 export function extractImageUrls(body) {
-  return [...new Set(body.match(IMAGE_URL_PATTERN) ?? [])];
+  return [...new Set(body.match(IMAGE_URL_PATTERN) ?? [])].sort((a, b) => b.length - a.length);
 }
 
 export function imageLocalName(url, usedNames) {
