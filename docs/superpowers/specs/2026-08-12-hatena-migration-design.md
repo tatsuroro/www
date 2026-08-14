@@ -11,8 +11,8 @@
 | 項目 | 状態 |
 |---|---|
 | PR #4 `rebuild-with-astro → main` | **2026-08-14 マージ済み**（`264f123`） |
-| GitHub Pages | **デプロイ成功**。`https://tatsuroro.github.io/www/` が 200 を返す。`cname` は未設定 |
-| `tatsuroro.com` | **未切替**。今も Vercel の旧 Next.js サイトを配信中 |
+| 配信先 | **Vercel**（2026-08-14 決定。GitHub Pages 案は撤回） |
+| `tatsuroro.com` | Vercel が配信。production が main を追えておらず旧 Next.js のままなのが未解決 |
 | 移行スクリプト | `scripts/import-hatena.mjs` と `scripts/lib/mt-parser.mjs` は実装・テスト済み。未実行 |
 | `src/assets/blog/hatena/` | 空 |
 | DNS | レジストラ Squarespace Domains II LLC、NS `ns-cloud-e{1..4}.googledomains.com`、A レコード `216.198.79.1`（Vercel） |
@@ -76,17 +76,21 @@ http://lineofficial.blogimg.jp/ja/imgs/f/d/fde02536-s.png
 
 ### Phase 1 — 新サイトの本番化
 
-移行より先に実施し、PR #4 とは別に扱う。デプロイが失敗したときに「Pages の設定問題」と「移行した記事の問題」を同時に疑わずに済む。
+移行より先に実施し、PR #4 とは別に扱う。デプロイが失敗したときに「配信基盤の設定問題」と「移行した記事の問題」を同時に疑わずに済む。
 
-1. ~~PR #4 をマージ → main で `deploy.yml` が発火~~ **完了（2026-08-14）**
-2. GitHub Pages にカスタムドメイン `tatsuroro.com` を設定
-3. Squarespace の DNS を切り替え
-   - A レコード: `216.198.79.1` → `185.199.108.153` / `185.199.109.153` / `185.199.110.153` / `185.199.111.153`
-   - `www`: CNAME `tatsuroro.github.io`
-4. HTTPS 証明書の発行を待ち、表示確認
-5. Vercel プロジェクトを停止
+1. ~~PR #4 をマージ~~ **完了（2026-08-14）**
+2. Vercel の production が main を配信するようにする
+3. `tatsuroro.com` で表示確認
 
-`astro.config.mjs` は `site: 'https://tatsuroro.com'` で `base` 未設定のため、`tatsuroro.github.io/www/` ではアセットとリンクが壊れる。カスタムドメイン設定が実質必須であり、それ以前の確認はローカルの `npm run preview` で行う。
+**2026-08-14: 配信先を GitHub Pages ではなく Vercel に決定した。** 2026-07-14 に「無料運用のため Vercel → GitHub Pages」と決めていたが、GitHub Pages は静的配信しかできず、リダイレクト・ヘッダー制御・将来の動的処理といったサイト改良の余地が無い。ドメインと HTTPS が既に Vercel で動いており、PR ごとのプレビューデプロイも機能しているため、DNS を触らず Vercel に一本化する。
+
+この決定に伴い:
+
+- `.github/workflows/deploy.yml`（GitHub Pages へのデプロイ）を削除する。1 ドメインに 2 つの配信経路があると事故のもとになる。
+- GitHub Pages のカスタムドメイン設定（`cname`）は解除済み。
+- DNS（Squarespace の A レコード `216.198.79.1`）は**変更しない**。
+
+`astro.config.mjs` は `site: 'https://tatsuroro.com'` で `base` 未設定。Vercel はドメイン直下に配信するためこの設定のままでよい（GitHub Pages のサブパス `tatsuroro.github.io/www/` ではアセットとリンクが壊れるが、その経路は使わない）。
 
 ### Phase 2 — 原本の保全
 
@@ -204,7 +208,7 @@ node:test を使う既存の方針を踏襲する。
 5. コードブロック 3 件が fenced code block になっており、`\[` のようなエスケープが混入していないこと
 6. `npm test` が成功する
 7. `npm run build` が成功する — Astro の画像最適化が md 内の相対画像参照を解決できること
-8. 本番 `tatsuroro.com` で公開 9 記事の本文と画像を目視確認できる
+8. 本番 `tatsuroro.com`（Vercel）で公開 9 記事の本文と画像を目視確認できる
 9. `archive/hatena/export.txt` に MT エクスポート原本が保全されている
 
 1〜9 をすべて満たしてから Phase 5 の削除に進む。
