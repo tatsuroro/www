@@ -1,0 +1,188 @@
+---
+import Base from '../layouts/Base.astro';
+import resumeData from '../data/resume.yaml';
+import worksData from '../data/works.yaml';
+import type { Portfolio, Resume } from '../lib/types';
+
+const resume = resumeData as Resume;
+const { works } = worksData as Portfolio;
+
+function period(start: string, end?: string): string {
+  return end ? `${start} - ${end}` : `${start} -`;
+}
+---
+
+<Base title="resume">
+  <h1>resume</h1>
+  <section class="basics">
+    <p class="name">{resume.basics.name}</p>
+    <p class="label">{resume.basics.label} / {resume.basics.location}</p>
+    {resume.basics.summary && <p>{resume.basics.summary}</p>}
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl>
+      {
+        resume.skills.map((skill) => (
+          <div class="row">
+            <dt>{skill.name}</dt>
+            <dd>{skill.keywords.join(', ')}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <ul class="timeline">
+      {
+        resume.work.map((job) => (
+          <li>
+            <span class="period">{period(job.startDate, job.endDate)}</span>
+            <div>
+              <p class="org">{job.name}</p>
+              {job.position && <p class="position">{job.position}</p>}
+              {job.summary && <p class="summary">{job.summary}</p>}
+              {job.highlights && (
+                <ul class="highlights">
+                  {job.highlights.map((h) => (
+                    <li>{h}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {
+    works.length > 0 && (
+      <section>
+        <h2>Works</h2>
+        <ul class="works">
+          {works.map((work) => (
+            <li>
+              <p class="work-title">
+                {work.url ? <a href={work.url}>{work.title}</a> : work.title}
+                <span class="year">({work.year})</span>
+              </p>
+              <p class="summary">{work.description}</p>
+              <p class="tech">
+                {work.tech.join(' / ')}
+                {work.repo && <a href={work.repo}>repo</a>}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  h1 {
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin: 2rem 0 0.75rem;
+  }
+
+  .basics .name {
+    font-size: 1.05rem;
+    color: var(--color-text-strong);
+  }
+
+  .basics .label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  dl {
+    margin: 0;
+  }
+
+  .row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  dt {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    min-width: 8.5rem;
+    padding-top: 0.15rem;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .timeline,
+  .works,
+  .highlights {
+    list-style: none;
+    padding: 0;
+  }
+
+  .timeline > li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .period {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: color-mix(in srgb, var(--color-accent) 72%, var(--color-text-muted));
+    min-width: 8.5rem;
+    padding-top: 0.25rem;
+    flex-shrink: 0;
+  }
+
+  .org {
+    color: var(--color-text-strong);
+  }
+
+  .position,
+  .summary,
+  .tech {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .highlights {
+    padding-left: 1.2rem;
+    list-style: disc;
+    font-size: 0.85rem;
+  }
+
+  .works > li {
+    margin-bottom: 1.2rem;
+  }
+
+  .work-title .year {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    margin-left: 0.4rem;
+  }
+
+  .tech a {
+    margin-left: 0.6rem;
+  }
+</style>

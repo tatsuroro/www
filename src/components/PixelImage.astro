@@ -1,0 +1,79 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+const { src, alt, width, height } = Astro.props;
+---
+
+<span class="pixel-resolve">
+  <img src={src} alt={alt} width={width} height={height} loading="eager" />
+  <canvas width={width} height={height} aria-hidden="true"></canvas>
+</span>
+
+<script>
+  function resolveSteps(img: HTMLImageElement, canvas: HTMLCanvasElement) {
+    const ctx = canvas.getContext('2d');
+    if (!ctx) {
+      canvas.remove();
+      return;
+    }
+    ctx.imageSmoothingEnabled = false;
+    const steps = [0.05, 0.1, 0.2, 0.4, 1];
+    let i = 0;
+    const tick = () => {
+      const scale = steps[i]!;
+      const w = Math.max(1, Math.round(canvas.width * scale));
+      const h = Math.max(1, Math.round(canvas.height * scale));
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0, w, h);
+      ctx.drawImage(canvas, 0, 0, w, h, 0, 0, canvas.width, canvas.height);
+      i += 1;
+      if (i < steps.length) {
+        setTimeout(tick, 90);
+      } else {
+        canvas.remove();
+      }
+    };
+    tick();
+  }
+
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for (const el of document.querySelectorAll<HTMLElement>('.pixel-resolve')) {
+    const img = el.querySelector('img');
+    const canvas = el.querySelector('canvas');
+    if (!img || !canvas) continue;
+    if (reduced) {
+      canvas.remove();
+      continue;
+    }
+    const start = () => resolveSteps(img, canvas);
+    if (img.complete) {
+      start();
+    } else {
+      img.addEventListener('load', start, { once: true });
+    }
+  }
+</script>
+
+<style>
+  .pixel-resolve {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+    flex-shrink: 0;
+  }
+
+  .pixel-resolve canvas {
+    position: absolute;
+    inset: 0;
+  }
+
+  .pixel-resolve img,
+  .pixel-resolve canvas {
+    border-radius: 50%;
+  }
+</style>
