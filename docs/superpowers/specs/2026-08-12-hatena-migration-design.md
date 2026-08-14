@@ -34,6 +34,17 @@
 | 画像 URL | **3 件**（フォトライフ 2 + 外部サイト 1） |
 | はてなキーワード自動リンク | **53 件** |
 | ブログカード iframe | **7 件** |
+| `<pre class="code" data-lang="" data-unlink>` | **3 件**（`<code>` のネストなし、`data-lang` は全て空） |
+| `<code>`（インライン） | 6 件 |
+| `<h3>` | 13 件 |
+| `<blockquote>` | 0 件 |
+
+### 素の turndown にかけた場合の破損（実測）
+
+`turndown@7.2.4` に前処理なしで通したところ、**2 種類の破損**を確認した。どちらも対処必須。
+
+- **ブログカード iframe 7 件が跡形もなく消滅する。** turndown は `<iframe>` に既定ルールを持たず、子要素も無いため出力がゼロになる。ルールを追加しないと、記事から 7 個のリンクが黙って失われる。
+- **コードブロック 3 件がプレーンテキストに落ち、しかもエスケープされる。** はてなブログのコードブロックは `<pre class="code">` で `<code>` を**ネストしない**。turndown の fenced code block ルールは `pre > code` を要求するため発火せず、`[color "diff"]` が `\[color \"diff\"\]` になる。技術記事の中身が壊れるため致命的。
 
 公開記事 9 件の BASENAME は、公開ページから取得した URL 一覧と完全一致する。
 
@@ -108,9 +119,9 @@ node scripts/import-hatena.mjs archive/hatena/export.txt \
   --download-images
 ```
 
-### 改修 1: はてな固有マークアップの除去
+### 改修 1: はてな固有マークアップの処理
 
-turndown をかける前に HTML を前処理する。3 種類ある。
+turndown の `addRule` で処理する。正規表現による HTML 前処理ではなく turndown のルール機構を使うのは、turndown が内部で DOM を構築しており、属性判定とネスト処理を正しく行えるためである。4 種類ある。
 
 **はてなキーワード自動リンク（53 件）** — はてなブログが本文中の単語に自動で付けるリンク。記事の意味ではなくサービス機能であり、リンク先の `d.hatena.ne.jp` は既にサービス終了している。リンクを外してテキストだけ残す。
 
@@ -131,7 +142,9 @@ turndown をかける前に HTML を前処理する。3 種類ある。
 [クラブ活動.com - スケジュール管理 出欠管理 掲示板 無料 グループウェア](https://clubkatsudo.com/)
 ```
 
-**フォトライフ画像の alt（2 件）** — `alt="f:id:tatsuroro:20180911120105p:plain"` は内部識別子であり読み手に意味がない。alt を空にする。
+**フォトライフ画像の alt / title（2 件）** — `alt="f:id:tatsuroro:20180911120105p:plain"` は内部識別子であり読み手に意味がない。同じ値が `title` 属性にも入っており、素の turndown では `![f:id:...](url "f:id:...")` と 2 箇所に出る。`f:id:` で始まる alt と title の両方を落とし、`![](path)` にする。
+
+**コードブロック `<pre class="code">`（3 件）** — `<code>` をネストしないため turndown の既定ルールが発火せず、中身がエスケープされたプレーンテキストになる。`<pre>` に対するルールを追加し、fenced code block として出力する。`data-lang` 属性が非空ならフェンスの言語指定に使う（実測では 3 件とも空なので言語なしになるが、正しさのため実装する）。
 
 ### 改修 2: `--slug-map <file>`
 
@@ -157,7 +170,8 @@ turndown をかける前に HTML を前処理する。3 種類ある。
 
 - はてなキーワードリンクの除去（`class="keyword"` あり → 除去、なし → 保持）
 - ブログカード iframe → Markdown リンク変換（URL デコードを含む）
-- フォトライフ画像の alt 除去
+- フォトライフ画像の alt / title 除去
+- `<pre class="code">` の fenced code block 化（エスケープされないこと、`data-lang` 非空なら言語指定が付くこと）
 - slug-map 適用時の出力ファイル名（DATE と BASENAME が食い違うケースを含む）
 - slug-map 未指定 BASENAME の自動命名フォールバック
 - 画像 URL 置換の最長一致順（短い URL が長い URL の接頭辞であるケース）
@@ -174,12 +188,14 @@ turndown をかける前に HTML を前処理する。3 種類ある。
    - `lineofficial.blogimg.jp` — 外部画像がローカル化されたこと
 
    `orangeclover.hatenablog.com` は本人が張った他者ブログへの引用リンクであり、**残してよい**。grep の対象から除外する。
-4. `npm test` が成功する
-5. `npm run build` が成功する — Astro の画像最適化が md 内の相対画像参照を解決できること
-6. 本番 `tatsuroro.com` で公開 9 記事の本文と画像を目視確認できる
-7. `archive/hatena/export.txt` に MT エクスポート原本が保全されている
+4. ブログカードのリンク 7 件が本文に残っている（消滅していないこと）
+5. コードブロック 3 件が fenced code block になっており、`\[` のようなエスケープが混入していないこと
+6. `npm test` が成功する
+7. `npm run build` が成功する — Astro の画像最適化が md 内の相対画像参照を解決できること
+8. 本番 `tatsuroro.com` で公開 9 記事の本文と画像を目視確認できる
+9. `archive/hatena/export.txt` に MT エクスポート原本が保全されている
 
-1〜7 をすべて満たしてから Phase 5 の削除に進む。
+1〜9 をすべて満たしてから Phase 5 の削除に進む。
 
 ## スコープ外
 
